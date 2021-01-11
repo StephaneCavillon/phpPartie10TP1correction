@@ -111,7 +111,7 @@
     </div>
 
     <div class="mb-3">
-        <label for="badge_number" class="form-label">Numéro pole emploi</label>
+        <label for="badge_number" class="form-label">Nombre de badge</label>
         <!-- pattern="[0-9]{7}[A-Z]{1}" -->
         <input type="text" class="form-control" id="badge_number" name="badge_number" value="<?= $badge_number ?? ''?>" min="0" max="200">
         <div id="badge_number_error" class="form-text"><?= $errorsArray['badge_number_error'] ?? ''?></div>
