@@ -53,6 +53,69 @@
         <div id="mail_error" class="form-text"><?= $errorsArray['mail_error'] ?? ''?></div>
     </div>
 
+    <!-- URL -->
+    <div class="mb-3">
+        <label for="link" class="form-label">Lien Codecademy</label>
+        <!-- pattern="/^(?:http(s)?://)?[\w.-]+(?:.[\w.-]+)+[\w-._~:/?#[]@!$&'()*+,;=.]+$/" -->
+        <input type="text" class="form-control" id="link" name="link" value="<?= $link ?? ''?>">
+        <div id="link_error" class="form-text"><?= $errorsArray['link_error'] ?? ''?></div>
+    </div>
+
+<!-- diplome -->
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="diploma" value="sans" id="sansdiplome"  <?= (isset($diploma) && $diploma == 'sans') ? 'checked' : ''?>>
+        <label class="form-check-label" for="sansdiplome">
+            Sans diplome
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="diploma" value="Bac" id="bac" <?= (isset($diploma) && $diploma == 'Bac') ? 'checked' : ''?>>
+        <label class="form-check-label" for="bac">
+            Bac
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="diploma" value="Bac+2" id="bac2"  <?= (isset($diploma) && $diploma == 'Bac+2') ? 'checked' : ''?>>
+        <label class="form-check-label" for="bac2">
+          Bac+2
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="diploma" value="bac+3 ou Supérieur" id="bac3" <?= (isset($diploma) && $diploma == 'bac+3 ou Supérieur') ? 'checked' : ''?>>
+        <label class="form-check-label" for="bac3">
+         Bac+3 ou supérieur
+        </label>
+    </div>
+
+    <div class="mb-3">
+        <label for="superhero">Quel superhero seriez-vous?</label>
+        <textarea class="form-control" placeholder="Quel superhero seriez-vous?" id="superhero" name="superhero" style="height: 100px"><?= $superhero ?? ''?></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="hack">Racontez nous un de vos hack</label>
+        <textarea class="form-control" placeholder="Racontez nous un de vos hack" id="hack" name="hack" style="height: 100px"><?= $hack ?? ''?></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="adress">Adresse</label>
+        <textarea class="form-control" placeholder="Indiquez votre adresse" id="adress" name="adress" style="height: 100px"><?= $adress ?? ''?></textarea>
+    </div>
+
+    <!-- Numéro Pole Emploi -->
+    <div class="mb-3">
+        <label for="job_number" class="form-label">Numéro pole emploi</label>
+        <!-- pattern="[0-9]{7}[A-Z]{1}" -->
+        <input type="text" class="form-control" id="job_number" name="job_number" value="<?= $job_number ?? ''?>">
+        <div id="job_number_error" class="form-text"><?= $errorsArray['job_number_error'] ?? ''?></div>
+    </div>
+
+    <div class="mb-3">
+        <label for="badge_number" class="form-label">Numéro pole emploi</label>
+        <!-- pattern="[0-9]{7}[A-Z]{1}" -->
+        <input type="text" class="form-control" id="badge_number" name="badge_number" value="<?= $badge_number ?? ''?>" min="0" max="200">
+        <div id="badge_number_error" class="form-text"><?= $errorsArray['badge_number_error'] ?? ''?></div>
+    </div>
 
 
   <button type="submit" class="btn btn-primary">Envoyer</button>

@@ -114,6 +114,60 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     // ***************************************************************
 
+    // On verifie l'existance et on nettoie
+    $link = trim(filter_input(INPUT_POST, 'link', FILTER_SANITIZE_URL));
+
+    //On test si le champ n'est pas vide
+    if(!empty($link)){
+        // On test la valeur
+        $testlink = filter_var($link, FILTER_VALIDATE_URL);
+
+        if($testlink == false){
+            $errorsArray['link_error'] = 'L\'Url n\'est pas valide, le format attendu est http://XXX.XX';
+        }
+    }
+
+    // ***************************************************************
+    
+    $diploma = trim(filter_input(INPUT_POST, 'diploma', FILTER_SANITIZE_STRING));
+
+    // ***************************************************************
+    $superhero = trim(filter_input(INPUT_POST, 'superhero', FILTER_SANITIZE_STRING));
+
+    // ***************************************************************
+    $hack = trim(filter_input(INPUT_POST, 'hack', FILTER_SANITIZE_STRING));
+
+    // ***************************************************************
+    $adress = trim(filter_input(INPUT_POST, 'adress', FILTER_SANITIZE_STRING));
+    // ***************************************************************
+
+    $job_number = trim(filter_input(INPUT_POST, 'job_number', FILTER_SANITIZE_STRING));
+
+    //On test si le champ n'est pas vide
+    if(!empty($job_number)){
+        // On test la valeur
+        $testRegex = preg_match(REGEXP_POLE_EMPLOI,$job_number);
+
+        if($testRegex == false){
+            $errorsArray['job_number_error'] = 'Le numero n\'est pas valide, pensez aux majuscules !';
+        }
+    }
+
+    // ***************************************************************
+    $badge_number = trim(filter_input(INPUT_POST, 'badge_number', FILTER_SANITIZE_NUMBER_INT));
+    
+    if(!empty($badge_number)){
+        // On test la valeur
+        $testnumber = filter_var($badge_number, FILTER_VALIDATE_INT);
+
+        if($testnumber == false){
+            $errorsArray['job_number_error'] = 'Le numero n\'est pas valide';
+        }
+    }
+
+
+
+
 }
 
 ?>
